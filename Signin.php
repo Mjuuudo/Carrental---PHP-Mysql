@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link src="./Style.css" rel="Stylesheet"> 
+    <link href="./Style.css" rel="Stylesheet"> 
     <title>Carrental - Sign In</title>
 </head>
 <body>
@@ -34,11 +34,12 @@
             Favourite Car And The Rest Is On US </p>
         </div>
         <div class="inputs">
-            <input type="email">
-            <input type="password">
+            <input type="email" placeholder="Email Adress">
+            <input type="password" placeholder="Password">
         </div>
+        <hr>
         <div class="buttons">
-            <button>forget Your Password</button>
+            <button>Forget Your Password ?</button>
             <button>Sign In <img src="./Assets/Sign_in/Sign_in_squre_duotone.png" alt=""></button>
         </div>
     </form>

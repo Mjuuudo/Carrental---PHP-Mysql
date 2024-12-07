@@ -1,3 +1,62 @@
+
+
+<?php
+$errorMsg= "";
+$errorMsgmail="";
+$errorMsgphone="";
+  
+if (isset($_POST['submit'])) {
+    include('configDb.php'); 
+
+    $nomValue= $_POST['firstname'];
+    $prenomValue= $_POST['lastname'];
+    $phoneValue = $_POST['phone'];
+    $emailValue = $_POST['email'];
+    $passwordValue = $_POST['pswd'];
+    $passwordValueVR = $_POST['pswdVR'];
+    
+    
+    if ($passwordValue != $passwordValueVR) {
+        $errorMsg = "Enter identical passwords";
+    } 
+    // else if(!preg_match( "/^([a-z][A-Z]){3}$/", $passwordValue)){
+    //     $errorMsg="the password must contain at least 8 characters";
+    // }
+    // else if("/^[a-z][A-Z][0-9]]@[a-z][A-Z][0-9]+\.[a-z][A-Z]$/", $emailValue ){
+    //     $errorMsgmail ="invalid email";
+    // }
+    
+    //else if(!preg_match("/^[0-9]{2}(\-[0-9]{2}){4}$/",$phoneValue )){
+   //     $errorMsgphone="Incorrect phone number";
+  //  }
+    else if ($emailValue && $passwordValue && $passwordValueVR) {
+        $password_hashed = password_hash($passwordValue, PASSWORD_DEFAULT); // Hachage du mot de passe
+        echo 'test';
+        $query = "INSERT INTO Clients(Nom, Prenom, telephone, Mail,	passsword)
+         VALUES ('$nomValue','$prenomValue','$phoneValue','$emailValue', '$passwordValue')";
+         mysqli_query($connDb, $query);
+        if (mysqli_query($connDb, $query)) {
+            echo "inserted successfully";
+            header("Location: home.php");
+            
+            
+        } else {
+            echo 'failed';
+           
+        }
+        echo 'test 2';
+    } else {
+        $errorMsg = "Entrer toutes les informations";
+    }
+
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,21 +88,34 @@
             <img src="./Assets/Sign_in/Form_Icone.png" alt="">
         </div>
         <div class="titlesub">
-            <h3>Sign In</h3>
+            <h3>Sign Up</h3>
             <p>Create Your Own Account And Start <br>
             Discovering Our Flotte </p>
         </div>
         <div class="inputs">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="email" placeholder="Email Adress">
-            <input type="password" placeholder="Password">
-            <input type="text" placeholder="Phone Number">
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name">
+            <input type="email" name="email" placeholder="Email Adress">
+            <?php
+            echo "<p style='color:red;'>$errorMsgmail </p>";
+            ?>
+            <input type="text" name="phone" placeholder="Phone Number">
+            <?php
+            echo "<p style='color:red;'>$errorMsgphone </p>";
+            ?>
+            <input type="password" name="pswd" placeholder="Password"> 
+            <input type="password" name="pswdVR" placeholder="Confirm Password">
+            
+        </div>
+        <div>
+            <?php
+            echo "<p style='color:red;'>$errorMsg </p>";
+            ?>
         </div>
         <hr>
         <div class="buttons">
             <button>Already Have An Account ?</button>
-            <button>Sign Up <img src="./Assets/Sign_up/User_fill_add.png" alt=""></button>
+            <button type="submit" name="submit">Sign Up <img src="./Assets/Sign_up/User_fill_add.png" alt=""></button>
         </div>
     </form>
 </section>

@@ -1,3 +1,47 @@
+
+    <?php
+    session_start();
+    $errorMsg = "";
+    if (isset($_POST['submit'])) {
+        include('configDB.php'); 
+    
+        $emailValue = $_POST['email'];
+        $passwordValue = $_POST['pswd'];
+
+        if (!empty($emailValue) && !empty($passwordValue)) {
+            //  vérifier l'existence de l'utilisateur dans la base de données
+            $query = "SELECT * FROM Clients WHERE Mail = '$emailValue'";
+            $result = mysqli_query($connDb, $query);
+    
+            if (mysqli_num_rows($result) > 0) {
+                // Si l'utilisateur existe, recuperer les données
+                $user = mysqli_fetch_assoc($result);//recuperer les donner sous form d'un tab associatif
+    
+                // Verifier le mot de passe avec password_verify
+                if (password_verify($passwordValueVR, $user['passsword'])) {
+                    
+                    $_SESSION['user_id'] = $user['Id']; // Sauvegarder l'ID dans la session
+                    $_SESSION['user_email'] = $user['Mail'];
+    
+                    header("Location: home.php");
+                } else {
+                    $errorMsg = "Mot de passe incorrect.";
+                }
+            } else {
+               
+                $errorMsg = "Aucun compte trouvé avec cet email.";
+            }
+        } else {
+            $errorMsg = "Veuillez remplir tous les champs.";
+        }
+    }
+    ?>
+    
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

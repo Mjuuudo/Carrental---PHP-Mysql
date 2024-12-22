@@ -1,0 +1,329 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling Start */
+
+#Header .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #000; */
+    padding: 20px 80px;
+}
+#Header .navbar .Sitetitle{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    color: #CFFA3E;
+}
+
+#Header .navbar .links{
+    font-family: 'Ubuntu';
+    color: #fff;
+
+}
+#Header .navbar .links a{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 20px;
+    position: relative;
+}
+#Header .navbar .links a::before{
+    position: absolute;
+    content: "";
+    background-color: #CFFA3E;
+    left: 0;
+    bottom: -6px;
+    width: 0px;
+    height: 4px;
+    transition: 0.4s ease-in;
+}
+
+#Header .navbar .links a:hover::before{
+    position: absolute;
+    content: "";
+    background-color: #CFFA3E;
+    left: 0;
+    bottom: -6px;
+    width: 38px;
+    height: 4px;
+}
+#Header .navbar .icon img{
+    cursor: pointer;
+}
+#Header .navbar .icon img:hover{
+    src: url('../Assets/Home/Icons/User_cicrle_hover.png');
+}
+
+/* Navbar Styling End */
+
+/* Header Styling Start */
+
+#Header{
+    background: url('../Assets/Home/Header/Background.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+#Header .headercontainer{
+    /* background-color: red; */
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 100px;
+}
+#Header .headercontainer .headercontent .subtitle{
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+
+}
+#Header .headercontainer .headercontent .section_title{
+    font-family: 'Ubuntu';
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+#Header .headercontainer .headercontent .descreption{
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 40px 0;
+}
+#Header .headercontainer .headercontent .headerbuttons{
+    /* background-color: red; */
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+#Header .headercontainer .headercontent .headerbuttons button{
+    background-color: #fff;
+    color: #000;
+    width: 180px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+#Header .headercontainer .headercontent .headerbuttons button:hover{
+    background-color: #CFFA3E;
+    
+}
+#Header .headercontainer .headercontent .headerbuttons button a{
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+
+/* Header Styling End */
+
+/* Trust Section Start */
+
+#Trust{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 80px;
+}
+#Trust .subtitle{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+#Trust .section_title{
+    font-family: 'Ubuntu';
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 60px 0;
+}
+#Trust .Caroussel{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*  Trust Section End */
+
+/* About Us Section Start */
+
+#Whyus{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 100px 80px;
+    background: rgb(5,87,103);
+    background: linear-gradient(90deg, rgba(5,87,103,1) 0%, rgba(31,46,51,1) 100%);
+}
+#Whyus .subtitle{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    margin: 20px 0;
+    color: #fff;
+}
+#Whyus .section_title{
+    font-family: 'Ubuntu';
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 60px 0;
+    color: #fff;
+}
+#Whyus .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#Whyus .container .card{
+    max-width: 370px;
+    max-height: 535px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    border-radius: 16px;
+    transition: 0.3s ease-in;
+}
+#Whyus .container .card:hover{
+    box-shadow: 11px 10px 16px -4px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 11px 10px 16px -4px rgba(0,0,0,0.26);
+    -moz-box-shadow: 11px 10px 16px -4px rgba(0,0,0,0.26);
+}
+#Whyus .container .card img{
+    margin-bottom: 40px;
+}
+#Whyus .container .card h4{
+    font-family: 'Ubuntu';
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#Whyus .container .card p{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/* About us Section End */
+
+/*  Category Section Starting  */
+
+#Category{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    padding: 100px 80px;
+}
+#Category .subtitle{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+#Category  .section_title{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    color: #000;
+}
+#Category .cards{
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+}
+#Category .cards .card{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: space-between;
+    flex: 0 0 30%;
+    height: 460px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    font-family: 'Ubuntu';
+    opacity: 1;
+}
+#Category .cards .card:nth-child(1){
+    background-image: linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)), url(../Assets/Home/Categorys/Normal\ Cars.svg);
+}
+#Category .cards .card:nth-child(2){
+    background-image: linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)), url(../Assets/Home/Categorys/Offroad.svg);
+}
+#Category .cards .card:nth-child(3){
+    background-image:linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)),  url(../Assets/Home/Categorys/Suv\ Vip\ Cars.svg);
+}
+
+#Category .cards .card .content h3{
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    margin:  30px 10px;
+}
+#Category .cards .card .content p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+#Category .cards .card button{
+    width: 130px;
+    height: 45px;
+    border: 1px solid #CFFA3E;
+    border-radius: 16px;
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Ubuntu';
+    margin: 10px;
+    transition: 0.3s ease-in;
+}
+#Category .cards .card button:hover{
+    background-color: #CFFA3E;
+}
+#Category .cards .card button:hover a{
+    color: #000;
+}
+#Category .cards .card  button a{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #CFFA3E;
+}
+ #Category .cards .card:not(.card:hover){
+    /* opacity: 0.6; */
+    transition: 0.5s ease-in-out;
+    /* background-image: linear-gradient(rgba(31, 46, 51, 0), rgba(31, 46, 51, 0)); */
+}
+/*
+#Category .cards .card:not(.card:hover) .content{
+    opacity: 0;
+}
+#Category .cards .card:not(.card:hover) button{
+    opacity: 0;
+} */
+
+/* Category Section Ending */
+
+/* Contact  Section Start */

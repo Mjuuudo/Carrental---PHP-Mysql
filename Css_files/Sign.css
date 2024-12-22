@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+.navbar{
+    background-color: #055767;
+    height: 100px;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    padding: 0 80px 0 80px;
+    align-items: center;
+}
+.navbar h1{
+    font-size: 48px;
+    font-weight: 600;
+    color: #E1F1F5;
+}
+.navbar .buttons{
+    gap: 120px;
+}
+.navbar .buttons button{
+    background-color: #CFFA3E;
+    align-items: center;
+    font-size: 24px;
+    border: none;
+    border-radius: 16px;
+    width: 197px;
+    height: 49px;
+    margin-right: 20px;
+    cursor: pointer;
+    /* text-align: center; */
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:  90vh;
+    /* background   -color: red; */
+}
+.form form{
+    background: rgb(5,87,103);
+    background: linear-gradient(340deg, rgba(5,87,103,1) 0%, rgba(31,46,51,1) 100%);
+    padding: 3%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form form .icone{
+    margin-bottom: 20px;
+}
+.form form .titlesub{
+    color: #E1F1F5;
+    margin-bottom: 20px;
+}
+.form form .titlesub h3{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.form form .titlesub p{
+    font-size: 12px;
+    font-weight: 200;
+}
+.form .inputs{
+    display: flex;
+    flex-direction: column;
+}
+.form .inputs input{
+    width: 305px;
+    height: 40px;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    padding: 15px;
+}
+
+.form .inputs input::placeholder{
+    font-weight: 400;
+}
+.form .buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+.form .buttons button:nth-child(1)
+{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #E1F1F5;
+    font-weight: 300;
+}
+
+.form .buttons button:nth-child(2)
+{
+    width: 85px;
+    height: 22px;
+    background-color: #CFFA3E;
+    color: #055767;
+    border: none;
+    cursor: pointer;
+    border-radius: 11px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2%; */
+}
+
+
+
+
+

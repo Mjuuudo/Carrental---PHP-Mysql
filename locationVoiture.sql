@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 07, 2024 at 01:37 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Dec 29, 2024 at 12:03 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `locationVoiture`
+-- Database: `locationvoiture`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Admins`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE `Admins` (
+CREATE TABLE `admins` (
   `Id_admin` int(10) UNSIGNED NOT NULL,
   `nom_adm` varchar(20) NOT NULL,
   `prenom_adm` varchar(20) NOT NULL,
@@ -39,10 +39,32 @@ CREATE TABLE `Admins` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Clients`
+-- Table structure for table `categorys`
 --
 
-CREATE TABLE `Clients` (
+CREATE TABLE `categorys` (
+  `category_id` int(100) NOT NULL,
+  `category` varchar(40) NOT NULL,
+  `background` varchar(50) NOT NULL,
+  `descreption` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categorys`
+--
+
+INSERT INTO `categorys` (`category_id`, `category`, `background`, `descreption`) VALUES
+(1, 'Normal Cars', '../Assets/Categorys/Normal Cars', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'),
+(2, 'Off Raod Cars', '../Assets/Categorys/Offroad', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,'),
+(3, 'SUV VIP Cars', '../Assets/Categorys/Suv Vip Cars', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clients`
+--
+
+CREATE TABLE `clients` (
   `Id` int(10) UNSIGNED NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
@@ -53,20 +75,33 @@ CREATE TABLE `Clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Clients`
+-- Dumping data for table `clients`
 --
 
-INSERT INTO `Clients` (`Id`, `Nom`, `Prenom`, `telephone`, `Mail`, `DateInscription`, `passsword`) VALUES
-(1, 'sattar', 'sara', 608070905, 'sara@gmail.com', '2024-12-03 12:15:09', '12345678'),
-(2, 'hajar', 'sattar', 987654323, 'Sara.Sattar@emsi-edu.ma', '2024-12-03 12:16:05', 'qwerty');
+INSERT INTO `clients` (`Id`, `Nom`, `Prenom`, `telephone`, `Mail`, `DateInscription`, `passsword`) VALUES
+(16, 'abdelmajid', 'ait ouaziz', 2147483647, 'abdelmajid.aitouaziz@gmail.com', '2024-12-07 15:43:26', '$2y$10$KtmXUu4M3ipu6hmokwXVseY5I.aybb87/EBX7I6i5.LjJb5Q/bbEy');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Paiements`
+-- Table structure for table `contact`
 --
 
-CREATE TABLE `Paiements` (
+CREATE TABLE `contact` (
+  `message_id` int(11) NOT NULL,
+  `first_name` varchar(40) NOT NULL,
+  `las_name` varchar(40) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `message` varchar(240) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paiements`
+--
+
+CREATE TABLE `paiements` (
   `Id_paiement` int(10) UNSIGNED NOT NULL,
   `id_res` int(10) UNSIGNED NOT NULL,
   `montant` decimal(10,0) UNSIGNED NOT NULL,
@@ -77,10 +112,10 @@ CREATE TABLE `Paiements` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Reservations`
+-- Table structure for table `reservations`
 --
 
-CREATE TABLE `Reservations` (
+CREATE TABLE `reservations` (
   `Id_res` int(10) UNSIGNED NOT NULL,
   `id_utilisateur` int(10) UNSIGNED NOT NULL,
   `id_voiture` int(10) UNSIGNED NOT NULL,
@@ -106,34 +141,62 @@ CREATE TABLE `voitures` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `voitures`
+--
+
+INSERT INTO `voitures` (`Id_voi`, `marque`, `modele`, `Annee`, `prix_par_jour`, `disponibilitee`, `image`) VALUES
+(1, 'Renault', 'clio 4', 2018, 35, 1, '../Assets/Cars/Renaultclio4'),
+(2, 'Dacia', 'Duster', 2022, 55, 1, '../Assets/Cars/Daciaduster'),
+(3, 'Opel', 'mokka', 2024, 70, 1, '../Assets/Cars/Opelmokka'),
+(4, 'Peugeot', '3008', 2023, 90, 1, '../Assets/Cars/Peugeot3008'),
+(5, 'Audi', 'Rs 6', 2020, 150, 1, '../Assets/Cars/audirs6'),
+(6, 'Fiat', '500', 2018, 45, 1, '../Assets/Cars/Fiat500'),
+(7, 'Jeep', 'Wrangler', 2022, 150, 1, '../Assets/Cars/Jeepwrangler'),
+(8, 'Volkswagen', ' Golf 7', 2020, 75, 1, '../Assets/Cars/Golf7'),
+(9, 'Volkswagen', 'T-ROC', 2023, 65, 1, '../Assets/Cars/Volkswagentroc'),
+(10, 'Citroen', 'C 3', 2018, 40, 1, '../Assets/Cars/Citroenc3');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Admins`
+-- Indexes for table `admins`
 --
-ALTER TABLE `Admins`
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`Id_admin`),
   ADD UNIQUE KEY `mail` (`mail`);
 
 --
--- Indexes for table `Clients`
+-- Indexes for table `categorys`
 --
-ALTER TABLE `Clients`
+ALTER TABLE `categorys`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `clients`
+--
+ALTER TABLE `clients`
   ADD PRIMARY KEY (`Id`),
   ADD UNIQUE KEY `Mail` (`Mail`);
 
 --
--- Indexes for table `Paiements`
+-- Indexes for table `contact`
 --
-ALTER TABLE `Paiements`
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`message_id`);
+
+--
+-- Indexes for table `paiements`
+--
+ALTER TABLE `paiements`
   ADD PRIMARY KEY (`Id_paiement`),
   ADD KEY `id_res` (`id_res`);
 
 --
--- Indexes for table `Reservations`
+-- Indexes for table `reservations`
 --
-ALTER TABLE `Reservations`
+ALTER TABLE `reservations`
   ADD PRIMARY KEY (`Id_res`),
   ADD KEY `id_utilisateur` (`id_utilisateur`),
   ADD KEY `id_voiture` (`id_voiture`);
@@ -149,50 +212,62 @@ ALTER TABLE `voitures`
 --
 
 --
--- AUTO_INCREMENT for table `Admins`
+-- AUTO_INCREMENT for table `admins`
 --
-ALTER TABLE `Admins`
+ALTER TABLE `admins`
   MODIFY `Id_admin` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Clients`
+-- AUTO_INCREMENT for table `categorys`
 --
-ALTER TABLE `Clients`
-  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `categorys`
+  MODIFY `category_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `Paiements`
+-- AUTO_INCREMENT for table `clients`
 --
-ALTER TABLE `Paiements`
+ALTER TABLE `clients`
+  MODIFY `Id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `paiements`
+--
+ALTER TABLE `paiements`
   MODIFY `Id_paiement` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Reservations`
+-- AUTO_INCREMENT for table `reservations`
 --
-ALTER TABLE `Reservations`
+ALTER TABLE `reservations`
   MODIFY `Id_res` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `voitures`
 --
 ALTER TABLE `voitures`
-  MODIFY `Id_voi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_voi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `Paiements`
+-- Constraints for table `paiements`
 --
-ALTER TABLE `Paiements`
-  ADD CONSTRAINT `paiements_ibfk_1` FOREIGN KEY (`id_res`) REFERENCES `Reservations` (`Id_res`) ON DELETE CASCADE;
+ALTER TABLE `paiements`
+  ADD CONSTRAINT `paiements_ibfk_1` FOREIGN KEY (`id_res`) REFERENCES `reservations` (`Id_res`) ON DELETE CASCADE;
 
 --
--- Constraints for table `Reservations`
+-- Constraints for table `reservations`
 --
-ALTER TABLE `Reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `Clients` (`Id`) ON DELETE CASCADE,
+ALTER TABLE `reservations`
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `clients` (`Id`) ON DELETE CASCADE,
   ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`id_voiture`) REFERENCES `voitures` (`Id_voi`) ON DELETE CASCADE;
 COMMIT;
 

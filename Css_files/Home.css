@@ -239,6 +239,7 @@
     font-size: 16px;
     font-weight: 400;
     color: #000;
+    margin-bottom: 20px;
 }
 #Category  .section_title{
     font-family: 'Ubuntu';
@@ -312,18 +313,168 @@
     color: #CFFA3E;
 }
  #Category .cards .card:not(.card:hover){
-    /* opacity: 0.6; */
     transition: 0.5s ease-in-out;
-    /* background-image: linear-gradient(rgba(31, 46, 51, 0), rgba(31, 46, 51, 0)); */
 }
-/*
-#Category .cards .card:not(.card:hover) .content{
-    opacity: 0;
-}
-#Category .cards .card:not(.card:hover) button{
-    opacity: 0;
-} */
 
 /* Category Section Ending */
 
 /* Contact  Section Start */
+
+#Contact{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    padding: 100px 80px;
+    background-image: linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)), url(../Assets/Home/Contact/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#Contact .subtitle{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+}
+#Contact .section_title{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+}
+#Contact .container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#Contact .container form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 140px 0;
+}
+#Contact .container form input{
+    font-family: 'Ubuntu';
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+}
+#Contact .container form input::placeholder{
+    color: #000;
+}
+
+#Contact .container form textarea{
+    font-family: 'Ubuntu';
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+}
+#Contact .container form button{
+    background-color: #CFFA3E;
+    font-family: 'Ubuntu';
+    color: #000;
+    width: 30%;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+#Contact .container form button:hover{
+    background-color: #fff;
+}
+
+/*  Contact Section End */
+
+/* Footer Section Start  */
+
+#Footer{
+    background: rgb(5,87,103);
+    background: linear-gradient(90deg, rgba(5,87,103,1) 0%, rgba(31,46,51,1) 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 80px 20px 80px;
+}
+#Footer .fathercontainer{
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-around;
+}
+#Footer .fathercontainer .container{
+    display: flex;
+    flex-direction: column;
+}
+#Footer .fathercontainer .container ul{
+    list-style: none;
+    font-family: 'Ubuntu';
+    color: #fff;
+    padding-left: 25px;
+}
+#Footer .fathercontainer .container ul li{
+    margin: 15px 0 15px 0;
+    cursor: pointer;
+}
+#Footer .fathercontainer .container:nth-child(1) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 48px;
+}
+#Footer .fathercontainer .container:nth-child(1) h4{
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: 24px;
+    margin: 22px 0;
+}
+#Footer .fathercontainer .container:nth-child(1) .input{
+    display: flex;
+    flex-direction: row;
+
+}
+#Footer .fathercontainer .container:nth-child(1) .input input{
+    padding: 15px;
+    border: none;
+}
+#Footer .fathercontainer .container:nth-child(1) .input button{
+    background-color: #CFFA3E;
+    border: none;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+#Footer .fathercontainer .container:nth-child(2) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(3) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(4) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(4) h4{
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    margin-left: 40px;
+    font-weight: 400;
+
+}
+#Footer  hr{
+    width: 100%;
+    margin: 20px;
+}
+#Footer  .copyright{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    margin: auto;
+    color: #fff;
+}
+/* Footer Section End */
+

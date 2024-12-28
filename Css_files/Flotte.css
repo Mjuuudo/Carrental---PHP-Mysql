@@ -1,0 +1,391 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Navbar Styling Start */
+
+#Header .navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #000; */
+    padding: 20px 80px;
+}
+#Header .navbar .Sitetitle{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    color: #CFFA3E;
+}
+
+#Header .navbar .links{
+    font-family: 'Ubuntu';
+    color: #fff;
+
+}
+#Header .navbar .links a{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0 20px;
+    position: relative;
+}
+#Header .navbar .links a::before{
+    position: absolute;
+    content: "";
+    background-color: #CFFA3E;
+    left: 0;
+    bottom: -6px;
+    width: 0px;
+    height: 4px;
+    transition: 0.4s ease-in;
+}
+
+#Header .navbar .links a:hover::before{
+    position: absolute;
+    content: "";
+    background-color: #CFFA3E;
+    left: 0;
+    bottom: -6px;
+    width: 38px;
+    height: 4px;
+}
+#Header .navbar .icon img{
+    cursor: pointer;
+}
+#Header .navbar .icon img:hover{
+    src: url('../Assets/Home/Icons/User_cicrle_hover.png');
+}
+
+/* Navbar Styling End */
+
+/* Header Styling Start */
+
+#Header{
+    background: linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)), url('../Assets/Flotte/Header_Backround.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+#Header .headercontainer{
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 100px;
+}
+
+#Header .headercontainer .headercontent .subtitle{
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    text-align: center;
+
+}
+#Header .headercontainer .headercontent .section_title{
+    font-family: 'Ubuntu';
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+#Header .headercontainer .headercontent .headerbuttons{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    margin: 400px 0 0 0;
+}
+#Header .headercontainer .headercontent .headerbuttons button{
+    background: transparent;
+    border: none;
+}
+#Header .headercontainer .headercontent .headerbuttons button a{
+    text-decoration: none;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+/* Header Styling End */
+
+/* Flotte Styling Start */
+
+#Flotte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    padding: 100px 80px; 
+}
+#Flotte h4{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+}
+#Flotte h3{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+form{
+    width: 100%;
+    margin-top: 120px;
+}
+#Flotte  .cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    gap: 5px;
+    font-family: 'Ubuntu';
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    margin: 0 20px;
+    width: fit-content;
+    background-color: #055767;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+/* .card .img{
+    height: 170px;
+    overflow: hidden;
+} */
+.card .img img{
+    /* border-radius: 24px; */
+    width: 100%;
+    height: 170px;
+    /* background-size: cover; */
+
+}
+.card .carbrand h4{
+    color: #CFFA3E;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 500;
+}
+.card .cardata{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 30px;
+    justify-content: space-around;
+}
+.card .cardata span{
+    margin: 10px 0;
+}
+.card .button{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 30px 30px 0 ;
+}
+.card .button button{
+    background-color: #CFFA3E;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Flotte Styling End */
+
+
+
+
+
+
+/* Contact  Section Start */
+
+#Contact{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    padding: 100px 80px;
+    background-image: linear-gradient(rgba(31, 46, 51, 0.5), rgba(31, 46, 51, 0.5)), url(../Assets/Home/Contact/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#Contact .subtitle{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+}
+#Contact .section_title{
+    font-family: 'Ubuntu';
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+}
+#Contact .container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#Contact .container form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 140px 0;
+}
+#Contact .container form input{
+    font-family: 'Ubuntu';
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+}
+#Contact .container form input::placeholder{
+    color: #000;
+}
+
+#Contact .container form textarea{
+    font-family: 'Ubuntu';
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+}
+#Contact .container form button{
+    background-color: #CFFA3E;
+    font-family: 'Ubuntu';
+    color: #000;
+    width: 30%;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+#Contact .container form button:hover{
+    background-color: #fff;
+}
+
+/*  Contact Section End */
+
+/* Footer Section Start  */
+
+#Footer{
+    background: rgb(5,87,103);
+    background: linear-gradient(90deg, rgba(5,87,103,1) 0%, rgba(31,46,51,1) 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 80px 20px 80px;
+}
+#Footer .fathercontainer{
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-around;
+}
+#Footer .fathercontainer .container{
+    display: flex;
+    flex-direction: column;
+}
+#Footer .fathercontainer .container ul{
+    list-style: none;
+    font-family: 'Ubuntu';
+    color: #fff;
+    padding-left: 25px;
+}
+#Footer .fathercontainer .container ul li{
+    margin: 15px 0 15px 0;
+    cursor: pointer;
+}
+#Footer .fathercontainer .container:nth-child(1) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 48px;
+}
+#Footer .fathercontainer .container:nth-child(1) h4{
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: 24px;
+    margin: 22px 0;
+}
+#Footer .fathercontainer .container:nth-child(1) .input{
+    display: flex;
+    flex-direction: row;
+
+}
+#Footer .fathercontainer .container:nth-child(1) .input input{
+    padding: 15px;
+    border: none;
+}
+#Footer .fathercontainer .container:nth-child(1) .input button{
+    background-color: #CFFA3E;
+    border: none;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+#Footer .fathercontainer .container:nth-child(2) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(3) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(4) h3{
+    color: #CFFA3E;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+}
+#Footer .fathercontainer .container:nth-child(4) h4{
+    color: #fff;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    margin-left: 40px;
+    font-weight: 400;
+
+}
+#Footer  hr{
+    width: 100%;
+    margin: 20px;
+}
+#Footer  .copyright{
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    margin: auto;
+    color: #fff;
+}
+
+/* Footer Section End */

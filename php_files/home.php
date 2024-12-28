@@ -1,7 +1,10 @@
 <?php
 session_start();
-
-$Categorys = array('Normal Cars', 'Offrad Cars', 'SUV VIP cars');
+try{
+    require ('configDb.php');
+} catch (Exception $e){
+    echo ("Connection Error");
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +32,8 @@ $Categorys = array('Normal Cars', 'Offrad Cars', 'SUV VIP cars');
             <div class="links">
                 <a href="#">Home</a>
                 <a href="#">About</a>
-                <a href="#">Flotte</a>
-                <a href="#">Contact</a>
+                <a href="Flotte.php">Flotte</a>
+                <a href="#Contact">Contact</a>
             </div>
             <div class="icon">
                 <img src="../Assets/Home/Icons/User_cicrle.svg" alt="" class="usericon">
@@ -113,38 +116,33 @@ $Categorys = array('Normal Cars', 'Offrad Cars', 'SUV VIP cars');
      <section id="Category">
         <h4 class="subtitle">rent a car that matches your needs</h4>
         <h3 class="section_title">Categorys</h3>
+
+        <!-- Cards Start -->
+
         <div class="cards">
-            <div class="card">
-                <div class="content">
-                    <h3>Normal Cars </h3>
-                    <p>Lorem Ipsum is simply dummy 
-                        text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s,</p>
-                </div>
-                <button><a href="#">Get Your car</a></button>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3>Off Raod Cars </h3>
-                    <p>Lorem Ipsum is simply dummy 
-                        text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s,</p>
-                </div>
-                <button><a href="#">Get Your car</a></button>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3>SUV VIP Cars </h3>
-                    <p>Lorem Ipsum is simply dummy 
-                        text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's
-                        standard dummy text ever since the 1500s,</p>
-                </div>
-                <button><a href="#">Get Your car</a></button>
-            </div>
+
+            <!-- Php Code For Printing The Categorys Cars Start  -->
+             <?php
+             $Query = "SELECT * FROM categorys";
+             $Result = mysqli_query($connDb, $Query);
+             if (mysqli_num_rows($Result) > 0){
+                while($row = mysqli_fetch_assoc($Result)){
+                    echo '<div class="card">';
+                    echo '<div class="content">';
+                        echo '<h3>'. $row["category"].'</h3>';
+                        echo '<p>'. $row["descreption"].'</p>';
+                    echo '</div>';
+                    echo '<button><a href="#">Get Your car</a></button>';
+                    echo '</div>';
+                }
+             }
+            ?>
+            <!-- Php Code For Printting The Categorys Element End -->
+
         </div>
+
+        <!-- Cards End -->
+
      </section>
     <!-- Category Section End -->
 
@@ -154,11 +152,79 @@ $Categorys = array('Normal Cars', 'Offrad Cars', 'SUV VIP cars');
         <h3 class="section_title">Contact Us</h3>
         <div class="container">
             <form action="#" method="post">
-
+                <input type="text"  placeholder="First Name" name="fname">
+                <input type="text"  placeholder="Last Name" name="lname" required>
+                <input type="number"  placeholder="Phone Number" name="phonenumber" required>
+                <textarea placeholder="Your Message" name="Message" id="" cols="30" rows="10">
+                </textarea>
+                <button id="submit" name="contact">Send Message</button>
             </form>
         </div>
     </section>
     <!-- Contact Section End -->
+
+    <!-- Contact Form Php Handler Start -->
+    <?php
+        if (isset($_POST['contact'])){
+            $name = $_POST['fname'];
+            $sname = $_POST['lname'];
+            $phonenumber = $_POST['phonenumber'];
+            $message = $_POST['message'];
+
+            $Query = "INSERT INTO `contact`(`first_name`, `las_name`, `phone`, `message`)
+                     VALUES ('.$name.','.$sname.','.$phonenumber.','.$message.')";
+            $Result = mysqli_query($connDb, $Query);
+        }
+    ?>
+    <!-- Contact Form Php Handler End -->
+
+    <!-- Footer Section Start -->
+    <section id="Footer">
+        <div class="fathercontainer">
+            <div class="container">
+                <h3>Car Rental</h3>
+                <h4>rent a car with high quality<br>
+                satisfied or refunded</h4>
+                <div class="input">
+                    <input type="email">
+                    <button>subscribe</button>
+                </div>
+            </div>
+            <div class="container">
+                <h3>website links</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Flotte</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+            <div class="container">
+                <h3>useful links</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Flotte</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+            <div class="container">
+                <h3>Get in touch</h3>
+                <h4>Street345 Egan Dr <br>
+                City/TownJuneauState/Province/RegionAlaska<br>
+                Zip/Postal Code99801<br>
+                Phone Number(907) 463-2367<br>
+                CountryUnited States</h4>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <h4>copyright reserved 2025 @ CarRental Developed With Love</h4>
+        </div>
+    </section>
+    <!-- Footer Section End -->
 
 </body>
 
